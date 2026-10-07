@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-paper: #F8F6F0;
+    --ink-black: #121212;
+    --accent-lime: #CCFF00;
+    --accent-yellow: #FFE600;
+    --accent-forest: #0F3822;
+    --paper-card: #FFFFFF;
+    --paper-muted: #EFECE4;
+    --border-dark: #121212;
+  }
+
+  body {
+    background-color: var(--bg-paper);
+    color: var(--ink-black);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  .font-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Hard Neo-Brutalist Box Shadows */
+.brutal-shadow-sm {
+  box-shadow: 3px 3px 0 #121212;
+}
+
+.brutal-shadow {
+  box-shadow: 5px 5px 0 #121212;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 7px 7px 0 #121212;
+}
+
+.brutal-shadow-xl {
+  box-shadow: 10px 10px 0 #121212;
+}
+
+.brutal-shadow-lime {
+  box-shadow: 5px 5px 0 #CCFF00;
+}
+
+.brutal-shadow-white {
+  box-shadow: 5px 5px 0 #FFFFFF;
+}
+
+/* Neo-Brutalist Button Hover & Active States */
+.brutal-btn {
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.12s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.brutal-btn:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 #121212;
+}
+
+.brutal-btn:active:not(:disabled) {
+  transform: translate(5px, 5px);
+  box-shadow: 0px 0px 0 #121212;
+}
+
+.brutal-btn-lg:hover:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 4px 4px 0 #121212;
+}
+
+.brutal-btn-lg:active:not(:disabled) {
+  transform: translate(7px, 7px);
+  box-shadow: 0px 0px 0 #121212;
+}
+
+/* Subtle scanning line */
+@keyframes scanLine {
+  0% {
+    top: 5%;
+    opacity: 0.6;
+  }
+  50% {
+    top: 92%;
+    opacity: 0.9;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.6;
+  }
+}
+
+.animate-scan-subtle {
+  animation: scanLine 2.8s ease-in-out infinite;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Barcode simulation pattern */
+.barcode-pattern {
+  background: repeating-linear-gradient(
+    90deg,
+    #121212,
+    #121212 2px,
+    transparent 2px,
+    transparent 4px,
+    #121212 4px,
+    #121212 7px,
+    transparent 7px,
+    transparent 9px,
+    #121212 9px,
+    #121212 10px,
+    transparent 10px,
+    transparent 13px,
+    #121212 13px,
+    #121212 16px,
+    transparent 16px,
+    transparent 18px
+  );
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F0;
+  border-left: 1.5px solid #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CCFF00;
+}
